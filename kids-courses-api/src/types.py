@@ -1,0 +1,40 @@
+﻿import strawberry
+from typing import Optional
+
+@strawberry.type
+class CourseType:
+    id: strawberry.ID
+    title: str
+    description: str
+    teacher_id: Optional[strawberry.ID] = None
+
+@strawberry.input
+class CourseCreateInput:
+    title: str
+    description: str
+    teacher_id: strawberry.ID
+
+@strawberry.input
+class CourseUpdateInput:
+    title: Optional[str] = None
+    description: Optional[str] = None
+    teacher_id: Optional[strawberry.ID] = None
+
+@strawberry.type
+class UserType:
+    id: strawberry.ID
+    username: str
+    email: str
+    role: str
+
+@strawberry.input
+class UserCreateInput:
+    username: str
+    email: str
+    role: str
+
+@strawberry.input
+class UserUpdateInput:
+    username: Optional[str] = None
+    email: Optional[str] = None
+    role: Optional[str] = None

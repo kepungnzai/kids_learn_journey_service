@@ -1,0 +1,17 @@
+﻿[project]
+name = "kids-courses-api"
+version = "0.1.0"
+description = "A GraphQL API for managing kids courses and user accounts."
+requires-python = ">=3.8"
+
+dependencies = [
+    "fastapi>=0.95.0",
+    "strawberry-graphql>=0.17.0",
+    "motor>=2.5.1",
+    "uvicorn>=0.15.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+]
