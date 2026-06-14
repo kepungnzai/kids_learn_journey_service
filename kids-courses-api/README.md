@@ -127,6 +127,54 @@ mutation {
 }
 ```
 
+Track course progress:
+```graphql
+mutation {
+  createCourseProgress(userId: "000000000000000000000000", courseId: "000000000000000000000000", currentCourseContentId: "000000000000000000000001") {
+    id
+    userId
+    courseId
+    currentCourseContentId
+  }
+}
+```
+
+Update course progress:
+```graphql
+mutation {
+  updateCourseProgress(id: "000000000000000000000001", currentCourseContentId: "000000000000000000000002") {
+    id
+    userId
+    courseId
+    currentCourseContentId
+  }
+}
+```
+
+Course ratings:
+```graphql
+mutation {
+  createCourseRating(courseId: "000000000000000000000000", authorId: "000000000000000000000000", rating: 5) {
+    id
+    courseId
+    authorId
+    rating
+  }
+}
+```
+
+List ratings for a course:
+```graphql
+query {
+  courseRatings(courseId: "000000000000000000000000") {
+    id
+    courseId
+    authorId
+    rating
+  }
+}
+```
+
 ## Testing
 
 Install test dependencies and run:

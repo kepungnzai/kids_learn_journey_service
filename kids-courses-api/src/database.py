@@ -1,6 +1,12 @@
 ﻿import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from typing import Optional
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from src/.env by default
+dotenv_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(dotenv_path)
 
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "kids_courses_db")

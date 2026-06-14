@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "kids-courses-api"
 version = "0.1.0"
 description = "A GraphQL API for managing kids courses and user accounts."
@@ -9,6 +9,8 @@ dependencies = [
     "strawberry-graphql>=0.17.0",
     "motor>=2.5.1",
     "uvicorn>=0.15.0",
+    "python-dotenv>=1.0.0",
+    "dotenv>=0.9.9",
 ]
 
 [project.optional-dependencies]
