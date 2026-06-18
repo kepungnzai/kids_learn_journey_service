@@ -1,10 +1,11 @@
 ﻿import strawberry
 from typing import List, Optional
-from .types import CourseType, UserType, CourseProgressType, CourseRatingType
+from .types import CourseType, UserType, CourseProgressType, CourseRatingType, CourseContentType
 from .resolvers.courses import list_courses, create_course, update_course
 from .resolvers.users import list_users, create_user, update_user, delete_user
 from .resolvers.course_progress import list_course_progress, create_course_progress, update_course_progress
 from .resolvers.course_ratings import list_course_ratings, create_course_rating, update_course_rating
+from .resolvers.course_content import list_course_contents, create_course_content, update_course_content
 
 @strawberry.type
 class Query:
@@ -12,6 +13,7 @@ class Query:
     users: List[UserType] = strawberry.field(resolver=list_users)
     course_progress: List[CourseProgressType] = strawberry.field(resolver=list_course_progress)
     course_ratings: List[CourseRatingType] = strawberry.field(resolver=list_course_ratings)
+    course_contents: List[CourseContentType] = strawberry.field(resolver=list_course_contents)
 
 @strawberry.type
 class Mutation:
@@ -24,5 +26,7 @@ class Mutation:
     update_course_progress: Optional[CourseProgressType] = strawberry.field(resolver=update_course_progress)
     create_course_rating: CourseRatingType = strawberry.field(resolver=create_course_rating)
     update_course_rating: Optional[CourseRatingType] = strawberry.field(resolver=update_course_rating)
+    create_course_content: CourseContentType = strawberry.field(resolver=create_course_content)
+    update_course_content: Optional[CourseContentType] = strawberry.field(resolver=update_course_content)
 
 schema = strawberry.Schema(query=Query, mutation=Mutation)

@@ -78,3 +78,15 @@ class CourseRatingCreateInput:
 @strawberry.input
 class CourseRatingUpdateInput:
     rating: Optional[int] = None
+
+
+@strawberry.type
+class CourseContentType:
+    content_id: strawberry.ID
+    course_related_id: Optional[strawberry.ID] = None
+    description: str
+    content: str
+    weblink: str
+    creation_date: str
+    last_update: str
+    author: str
